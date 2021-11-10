@@ -1,47 +1,87 @@
-import React, { Component } from 'react';
-import Controls from './Controls';
-import Value from './Value';
+import React from 'react';
 import './Counter.css';
 
-class Counter extends Component {
-  static defaultProps = {
-    initialValue: 0,
-  };
-
-  static propTypes = {
-    //
-  };
-
-  state = {
-    value: this.props.initialValue,
-  };
-
-  handleIncrement = () => {
-    this.setState(prevState => ({
-      value: prevState.value + 1,
-    }));
-  };
-
-  handleDecrement = () => {
-    this.setState(prevState => ({
-      value: prevState.value - 1,
-    }));
-  };
-
+class Counter extends React.Component {
   render() {
-    const { value } = this.state;
-
     return (
-      <div className="Counter">
-        <Value value={value} />
 
-        <Controls
-          onIncrement={this.handleIncrement}
-          onDecrement={this.handleDecrement}
-        />
+      <div className="Counter">
+        <span className='Counter__value'> 0 </span>
+
+        <div className='Counter__controls'>
+          <button type="button" onClick={() => {
+            console.log('+1 ')
+          }}>
+            Увеличить на 1
+          </button>
+          <button type="button" onClick={ }>
+            Уменьшить на 1
+          </button>
+        </div>
       </div>
-    );
+    )
   }
 }
 
+
 export default Counter;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { Component } from 'react';
+// import Controls from './Controls';
+// import Value from './Value';
+// import './Counter.css';
+
+// class Counter extends Component {
+//   static defaultProps = {
+//     initialValue: 0,
+//   };
+
+//   static propTypes = {
+//     //
+//   };
+
+//   state = {
+//     value: this.props.initialValue,
+//   };
+
+//   handleIncrement = () => {
+//     this.setState(prevState => ({
+//       value: prevState.value + 1,
+//     }));
+//   };
+
+//   handleDecrement = () => {
+//     this.setState(prevState => ({
+//       value: prevState.value - 1,
+//     }));
+//   };
+
+//   render() {
+//     const { value } = this.state;
+
+//     return (
+//       <div className="Counter">
+//         <Value value={value} />
+
+//         <Controls
+//           onIncrement={this.handleIncrement}
+//           onDecrement={this.handleDecrement}
+//         />
+//       </div>
+//     );
+//   }
+// }
+
+// export default Counter;
